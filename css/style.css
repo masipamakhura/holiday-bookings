@@ -25,6 +25,11 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%;
+      max-width: 100%;
+      width: 100%; } }
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -53,7 +58,7 @@ body {
     background-color: var(--color-grey-light-2);
     border-radius: 100px;
     width: 90%;
-    transition: all  .2s;
+    transition: all .2s;
     margin-right: -3.5rem; }
     .search__input::-webkit-input-placeholder {
       font-weight: 100;
@@ -118,8 +123,14 @@ body {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem; }
+  @media only screen and (max-width: 56.25em) {
+    .side-nav {
+      display: flex; } }
   .side-nav__item {
     position: relative; }
+    @media only screen and (max-width: 56.25em) {
+      .side-nav__item {
+        flex: 1; } }
     .side-nav__item:not(:last-child) {
       margin-bottom: 3px; }
     .side-nav__item::before {
@@ -158,6 +169,102 @@ body {
   color: var(--color-grey-light-4);
   padding: 2.5rem;
   text-align: center; }
+  @media only screen and (max-width: 56.25em) {
+    .ligal {
+      display: none; } }
+
+.user-reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.review {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  border-top-left-radius: 4.5rem;
+  position: relative;
+  overflow: hidden; }
+  .review__text {
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1000; }
+  .review__user {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0; }
+    .review__user-box {
+      display: flex;
+      flex-direction: column;
+      margin-right: auto; }
+    .review__user-name {
+      font-size: 1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: .4rem; }
+    .review__user-date {
+      font-size: 1rem;
+      color: var(--color-grey-dark-3); }
+  .review__photo {
+    height: 4rem;
+    width: 4rem;
+    margin-right: 1.5rem;
+    border-radius: 50%; }
+  .review__rating {
+    color: var(--color-primary);
+    font-size: 2.2rem;
+    font-weight: 300; }
+  .review::before {
+    content: "\201C";
+    position: absolute;
+    top: -2.75rem;
+    left: 1rem;
+    font-size: 20rem;
+    font-family: sans-serif;
+    line-height: 1;
+    z-index: 1;
+    color: var(--color-grey-light-3); }
+
+.cta {
+  padding: 3.5rem;
+  text-align: center; }
+  .cta__box-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden; }
+  .btn:focus {
+    animation: pulstate 1s infinite; }
+  .btn__visible {
+    display: inline-block;
+    padding: 2rem 7.5rem;
+    height: 100%;
+    width: 100%; }
+  .btn__invisible {
+    display: inline-block;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 2rem 0;
+    height: 100%;
+    width: 100%;
+    transition: all 1s; }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
 
 .container {
   max-width: 120rem;
@@ -166,6 +273,9 @@ body {
   box-shadow: var(--shadow-dark);
   border-radius: 3px;
   min-height: 50rem; }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0; } }
 
 .header {
   font-size: 1.4rem;
@@ -178,6 +288,9 @@ body {
 
 .content {
   display: flex; }
+  @media only screen and (max-width: 56.25em) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   background-color: var(--color-grey-dark-1);
@@ -247,8 +360,13 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all .2s; }
+  .btn-inline span {
+    margin-left: 10px;
+    transition: margin-left 2s; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
+    .btn-inline:hover span {
+      margin-left: 15px; }
   .btn-inline:focus {
     outline: none;
     animation: pulstate 1s infinite; }
@@ -265,13 +383,16 @@ body {
     box-shadow: none; } }
 
 .details {
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line); }
+  @media only screen and (max-width: 37.5em) {
+    .details {
+      flex-direction: column; } }
 
 .description {
-  font-size: 1.4rem;
   background-color: var(--color-white);
   box-shadow: var(--shadow-light);
   padding: 3rem;
@@ -279,7 +400,6 @@ body {
   margin-right: 4.5rem; }
 
 .user-reviews {
-  background-color: yellowgreen;
   flex: 1; }
 
 .paragraph:not(:last-of-type) {
